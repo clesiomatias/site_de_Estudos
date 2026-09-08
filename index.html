@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Preparação HCRP | Simulados</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         TELA INICIAL
+    ========================== -->
+
+    <main id="app">
+
+        <section id="screen-start" class="screen active">
+
+            <div class="start-container">
+
+                <div class="brand">
+                    <div class="brand-icon">🩺</div>
+
+                    <div>
+                        <h1>Preparação HCRP</h1>
+                        <p>Simulado para Técnico de Enfermagem</p>
+                    </div>
+                </div>
+
+                <div class="hero-card">
+
+                    <span class="badge">SIMULADO</span>
+
+                    <h2>Prepare-se para a prova</h2>
+
+                    <p>
+                        Teste seus conhecimentos seguindo a mesma
+                        distribuição de disciplinas da prova.
+                    </p>
+
+                    <div class="exam-info">
+
+                        <div class="info-item">
+                            <strong>50</strong>
+                            <span>Questões</span>
+                        </div>
+
+                        <div class="info-item">
+                            <strong>3h</strong>
+                            <span>Tempo</span>
+                        </div>
+
+                        <div class="info-item">
+                            <strong>100</strong>
+                            <span>Pontos</span>
+                        </div>
+
+                    </div>
+
+                    <div class="subjects">
+
+                        <div class="subject portuguese">
+                            <span>📚</span>
+                            <div>
+                                <strong>Português</strong>
+                                <small>15 questões</small>
+                            </div>
+                        </div>
+
+                        <div class="subject math">
+                            <span>➗</span>
+                            <div>
+                                <strong>Matemática</strong>
+                                <small>10 questões</small>
+                            </div>
+                        </div>
+
+                        <div class="subject biology">
+                            <span>🧬</span>
+                            <div>
+                                <strong>Biologia</strong>
+                                <small>15 questões</small>
+                            </div>
+                        </div>
+
+                        <div class="subject computer">
+                            <span>💻</span>
+                            <div>
+                                <strong>Informática</strong>
+                                <small>10 questões</small>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <button id="btn-start" class="btn-primary">
+                        Começar Simulado
+                        <span>→</span>
+                    </button>
+
+                </div>
+
+                <p class="motivational">
+                    💙 Cada questão é uma oportunidade de chegar mais perto da aprovação.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             TELA DO SIMULADO
+        ========================== -->
+
+        <section id="screen-quiz" class="screen">
+
+            <header class="quiz-header">
+
+                <div class="quiz-brand">
+                    <span>🩺</span>
+                    <strong>Preparação HCRP</strong>
+                </div>
+
+                <div class="timer" id="timer">
+                    03:00:00
+                </div>
+
+                <button id="btn-finish-top" class="btn-finish">
+                    Finalizar
+                </button>
+
+            </header>
+
+
+            <div class="quiz-container">
+
+                <!-- Cabeçalho da questão -->
+
+                <div class="question-top">
+
+                    <div>
+                        <span id="question-discipline" class="discipline-badge">
+                            Biologia
+                        </span>
+
+                        <span id="question-number">
+                            Questão 1 de 50
+                        </span>
+                    </div>
+
+                    <span id="question-topic" class="topic">
+                        Citologia
+                    </span>
+
+                </div>
+
+
+                <!-- Barra de progresso -->
+
+                <div class="progress-container">
+
+                    <div class="progress-bar">
+                        <div id="progress"></div>
+                    </div>
+
+                    <span id="progress-text">
+                        0%
+                    </span>
+
+                </div>
+
+
+                <!-- Questão -->
+
+                <article class="question-card">
+
+                    <h2 id="question-text">
+                        Carregando questão...
+                    </h2>
+
+                    <div id="alternatives" class="alternatives">
+                        <!-- preenchido pelo JavaScript -->
+                    </div>
+
+                </article>
+
+
+                <!-- Navegação -->
+
+                <div class="navigation">
+
+                    <button id="btn-prev" class="btn-secondary">
+                        ← Anterior
+                    </button>
+
+                    <button id="btn-next" class="btn-primary">
+                        Próxima →
+                    </button>
+
+                </div>
+
+
+                <!-- Navegador de questões -->
+
+                <div class="question-map-card">
+
+                    <div class="map-header">
+
+                        <div>
+                            <strong>Questões</strong>
+                            <span id="answered-count">
+                                0 de 50 respondidas
+                            </span>
+                        </div>
+
+                        <div class="legend">
+
+                            <span>
+                                <i class="legend-current"></i>
+                                Atual
+                            </span>
+
+                            <span>
+                                <i class="legend-answered"></i>
+                                Respondida
+                            </span>
+
+                            <span>
+                                <i class="legend-empty"></i>
+                                Não respondida
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                    <div id="question-map" class="question-map">
+                        <!-- preenchido pelo JavaScript -->
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             TELA DE RESULTADO
+        ========================== -->
+
+        <section id="screen-result" class="screen">
+
+            <div class="result-container">
+
+                <div class="result-header">
+
+                    <span class="result-icon">🎯</span>
+
+                    <h1>Resultado do Simulado</h1>
+
+                    <p id="result-message">
+                        Muito bem!
+                    </p>
+
+                </div>
+
+
+                <div class="score-card">
+
+                    <div class="score-circle">
+
+                        <strong id="final-score">
+                            0
+                        </strong>
+
+                        <span>pontos</span>
+
+                    </div>
+
+                    <div class="score-details">
+
+                        <div>
+                            <strong id="correct-count">0</strong>
+                            <span>Acertos</span>
+                        </div>
+
+                        <div>
+                            <strong id="wrong-count">0</strong>
+                            <span>Erros</span>
+                        </div>
+
+                        <div>
+                            <strong id="percentage">0%</strong>
+                            <span>Aproveitamento</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="result-section">
+
+                    <h2>Desempenho por disciplina</h2>
+
+                    <div id="discipline-results">
+                        <!-- preenchido pelo JS -->
+                    </div>
+
+                </div>
+
+
+                <div class="result-section">
+
+                    <h2>Desempenho geral</h2>
+
+                    <div class="performance-message" id="performance-message">
+                    </div>
+
+                </div>
+
+
+                <div class="result-section">
+
+                    <div class="section-header">
+
+                        <h2>Questões para revisar</h2>
+
+                        <span id="wrong-total">
+                            0 questões
+                        </span>
+
+                    </div>
+
+                    <div id="wrong-questions">
+                        <!-- preenchido pelo JS -->
+                    </div>
+
+                </div>
+
+
+                <div class="result-actions">
+
+                    <button id="btn-new-simulation" class="btn-primary">
+                        Fazer novo simulado
+                    </button>
+
+                    <button id="btn-history" class="btn-secondary">
+                        Ver histórico
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             TELA DE HISTÓRICO
+        ========================== -->
+
+        <section id="screen-history" class="screen">
+
+            <div class="history-container">
+
+                <div class="history-header">
+
+                    <div>
+                        <span class="small-title">SEU PROGRESSO</span>
+                        <h1>Histórico de simulados</h1>
+                    </div>
+
+                    <button id="btn-back-result" class="btn-secondary">
+                        ← Voltar
+                    </button>
+
+                </div>
+
+                <div id="history-list">
+                    <!-- preenchido pelo JS -->
+                </div>
+
+                <button id="btn-clear-history" class="btn-danger">
+                    Limpar histórico
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- Modal de confirmação -->
+
+    <div id="confirm-modal" class="modal">
+
+        <div class="modal-content">
+
+            <div class="modal-icon">
+                ⚠️
+            </div>
+
+            <h2>Finalizar simulado?</h2>
+
+            <p id="modal-message">
+                Você ainda possui questões sem responder.
+            </p>
+
+            <div class="modal-actions">
+
+                <button id="btn-cancel-modal" class="btn-secondary">
+                    Continuar
+                </button>
+
+                <button id="btn-confirm-finish" class="btn-primary">
+                    Finalizar prova
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script src="biologia.js"></script>
+    <script src="matematica.js"></script>
+    <script src="portugues.js"></script>
+    <script src="informatica.js"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>
