@@ -1,4 +1,4 @@
-export const questionBankBiologia = [
+const questionBankBiologia = [
 
 {
 id: 1,
