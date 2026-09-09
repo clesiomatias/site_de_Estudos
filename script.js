@@ -389,7 +389,8 @@ function renderQuestion() {
         "A",
         "B",
         "C",
-        "D"
+        "D",
+        "E"
     ];
 
 
